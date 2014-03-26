@@ -5,9 +5,9 @@ package kale.fileUtil
 	 * @author kaleidos
 	 */
 	import kale.fileUtil.KaleResourceType;
-	public class KaleTxtResourcePath extends KagResourcePath 
+	public class KaleTxtResourcePath extends KaleResourcePath 
 	{
-		
+		private var _subPathStr:String = "mapdata\\";
 		public function KaleTxtResourcePath( resFileName:String ) 
 		{
 			super(resFileName);
@@ -16,8 +16,14 @@ package kale.fileUtil
 		
 		protected override function _subPathString():String
 		{
-			return "mapdata\\";
+			return _subPathStr;
 		}
+		
+		public function setSubPathString( str:String ):void
+		{
+			_subPathStr = str;
+		}
+		
 		protected override function _fileAffix():String
 		{
 			return ".txt";

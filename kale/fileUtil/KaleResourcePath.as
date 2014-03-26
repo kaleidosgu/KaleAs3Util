@@ -9,9 +9,10 @@ package kale.fileUtil
 	{
 		protected var _pathType:String;
 		private var _resourcePath:String = "";
+		private var _fileName:String = "";
 		public function KaleResourcePath( resFileName:String ) 
 		{
-			_resourcePath = _generatePath( resFileName );
+			_fileName = resFileName;
 		}
 		
 		protected function _generateAppResPath():String
@@ -37,6 +38,7 @@ package kale.fileUtil
 		
 		public function get resourcePath():String 
 		{
+			_resourcePath = _generatePath( _fileName );
 			return _resourcePath;
 		}
 	}
